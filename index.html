@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head> 
+        <link rel="stylesheet" href="styles.css">
+        <meta name="theme-color" content="#f0ffff">
+        <title> Dairy with Roadrunner 1.0</title>
+        <meta content="Using Dairy with RR1.0" property="og:title" />
+        <meta content="A short guide on using Dariy with Roadrunner 1.0 " property="og:description" />
+        <meta content="https://dairy.usenewroadrunner.fyi" property="og:url" />
+        <meta content="#008080" data-react-helmet="true" name="theme-color" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+
+    </head>
+    <body>
+        <div class ="center" style="align-self: center;">
+            <h1 class="center" style="align-self: center;">
+                Using Dairy with Roadrunner 1.0
+            </h1>
+            <p>
+                Dairy's service framework is tighly bound to the OpMode lifecycle and all services depend on <code>Loop()</code> occuring many 
+                times a second. By default, Roadrunner 1.0 runs code in a blocking loop, not letting the actual <code>Loop()</code> code of your OpMode run.
+                <br><br>
+                For users who are not using Mercurial as a commandbase, you will only need something to correct the blocking actions runner. 
+                This can be done with this sample Dairy service. It changes <code>Actions.runBlocking()</code> to <code>Silkroad.runAsync()</code>
+            </p>
+        </div>
+    </body> 
+</html>
