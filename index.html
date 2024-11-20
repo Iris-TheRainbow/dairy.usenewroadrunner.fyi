@@ -4,8 +4,8 @@
         <link rel="stylesheet" href="styles.css">
         <meta name="theme-color" content="#f0ffff">
         <title> Dairy with Roadrunner 1.0</title>
-        <meta content="Using Dairy with RR1.0" property="og:title" />
-        <meta content="A short guide on using Dariy with Roadrunner 1.0 " property="og:description" />
+        <meta content="Using Dairy with RR 1.0" property="og:title" />
+        <meta content="A short guide on using Dariy with Road Runner 1.0" property="og:description" />
         <meta content="https://dairy.usenewroadrunner.fyi" property="og:url" />
         <meta content="#008080" data-react-helmet="true" name="theme-color" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
@@ -16,27 +16,36 @@
     <body onload="loadCode(); hljs.highlightAll();">
         <div class ="center" style="align-self: center;">
             <h1 class="center" style="align-self: center;">
-                Using Dairy with Roadrunner 1.0
+                Using Dairy with Road Runner 1.0
             </h1>
             <p>
-                Dairy's service framework is tighly bound to the OpMode lifecycle and all services depend on <code>Loop()</code> occuring many 
-                times a second. By default, Roadrunner 1.0 runs code in a blocking loop, not letting the actual <code>Loop()</code> code of your OpMode run.
+                Dairy's service framework is tighly bound to the OpMode lifecycle;
+                all services depend on <code>Loop()</code> occuring many times a second.
+                By default, Road Runner actions are run in a blocking loop,
+                not letting the actual <code>Loop()</code> code of your OpMode run.
                 <br><br>
-                For users who are not using Mercurial as a commandbase, you will only need something to correct the blocking actions runner. 
+                If you are not using Mercurial as a command base,
+                you will only need something to correct the blocking actions runner.
                 This can be done with this sample Dairy service.
                 <br><br>
-                Below is a sample service called Silkroad. It is a dairy service where you set your running actions with <code>Silkroad.runAsync()</code>, 
-                similar to <code>Actions.runBlocking()</code>, but in the <code>Start()</code> method of <code>OpMode</code>. Then, Silkroad automatically 
-                update your drive until all supplied actions are done, with no code besides setting run async actions required.
+                Below is a sample service called Silkroad.
+                It is a dairy service where you set your running actions with <code>Silkroad.runAsync()</code>,
+                similar to <code>Actions.runBlocking()</code>,
+                but in the <code>Start()</code> method of <code>OpMode</code>.
+                Then, Silkroad automatically updates your drive until all supplied actions are done,
+                with no code besides setting run async actions required.
                 <br><br>
                 <span id="silkroad"></span>
                 <br><br>
-                If you use Mercurial, you probably do not want to write a bunch of actions to do what you already wrote in mercurial, so heres something else that may be useful:
+                If you use Mercurial,
+                you probably do not want to write a bunch of actions to do what you already wrote in mercurial,
+                so heres something else that may be useful:
                 <br><br>
                 <span id="mercact"></span>
                 <br><br>
-                You just use this in <code>Silkroad.runAsync()</code> like you would any other action and pass in a command! It even works on Mercurial parralel or 
-                sequential commands, all you need to do is: <code class="language-java">new MercurialAction(new Parallel(Command...))</code>
+                You just use this in <code>Silkroad.runAsync()</code> like you would any other action and pass in a command!
+                It even works on Mercurial parralel or sequential commands, all you need to do is:
+                <code class="language-java">new MercurialAction(new Parallel(Command...))</code>
                 <br><br>
                 If you want to see a (questionable quality) example of how this all works, you can check out 
                 <a  href="https://github.com/Iris-TheRainbow/27971-IntoTheDeep-Teamcode/blob/main/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/opmodes/Auto.java">team 27971 Null Pointer Exception's Teamcode.</a>
