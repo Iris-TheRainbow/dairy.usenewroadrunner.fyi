@@ -23,30 +23,33 @@
                 all services depend on <code>Loop()</code> occuring many times a second.
                 By default, Road Runner actions are run in a blocking loop,
                 not letting the actual <code>Loop()</code> code of your OpMode run.
-                <br><br>
+            </p>
+            <p>
                 If you are not using Mercurial as a command base,
                 you will only need something to correct the blocking actions runner.
                 This can be done with this sample Dairy service.
-                <br><br>
+            </p>
+            <p>
                 Below is a sample service called Silkroad.
                 It is a dairy service where you set your running actions with <code>Silkroad.runAsync()</code>,
                 similar to <code>Actions.runBlocking()</code>,
                 but in the <code>Start()</code> method of <code>OpMode</code>.
                 Then, Silkroad automatically updates your drive until all supplied actions are done,
                 with no code besides setting run async actions required.
-                <br><br>
+            </p>
                 <span id="silkroad"></span>
-                <br><br>
+            <p>
                 If you use Mercurial,
                 you probably do not want to write a bunch of actions to do what you already wrote in mercurial,
                 so heres something else that may be useful:
-                <br><br>
+            </p>
                 <span id="mercact"></span>
-                <br><br>
+            <p>
                 You just use this in <code>Silkroad.runAsync()</code> like you would any other action and pass in a command!
                 It even works on Mercurial parralel or sequential commands, all you need to do is:
                 <code class="language-java">new MercurialAction(new Parallel(Command...))</code>
-                <br><br>
+            </p>
+            <p>
                 If you want to see a (questionable quality) example of how this all works, you can check out 
                 <a  href="https://github.com/Iris-TheRainbow/27971-IntoTheDeep-Teamcode/blob/main/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/opmodes/Auto.java">team 27971 Null Pointer Exception's Teamcode.</a>
             </p>
