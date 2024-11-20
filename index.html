@@ -13,45 +13,22 @@
         <script>hljs.highlightAll();</script>
         <script src="/hidethecode.js"></script>
     </head>
-    <body onload="loadCode(); hljs.highlightAll();">
+    <body onload="loadCode();">
         <div class ="center" style="align-self: center;">
             <h1 class="center" style="align-self: center;">
                 Using Dairy with Road Runner 1.0
             </h1>
             <p>
-<<<<<<< HEAD
-                Dairy's service framework is tighly bound to the OpMode lifecycle;
-                all services depend on <code>Loop()</code> occuring many times a second.
-                However, Road Runner actions run through <code>Actions.runBlocking()</code>
-                run their own loop instead of using the build in OpMode loop;
-                this prevents Dairy's hooks from working properly.
-            </p>
-            <p>
-                To fix this, you can use this sample Dairy service named Silkroad
-                which updates your running actions after each loop.
-                This allows Dairy's hooks to work properly
-                and allows you to use any update code you would like within the loop function.
-            </p>
-            <p>
-                Below is the code for Silkroad.
-                Set your running actions with <code>Silkroad.runAsync()</code>
-                after your OpMode starts, just like you would with
-                <code>Actions.runBlocking()</code>.
-                Then, Silkroad will automatically run your actions asyncronously,
-                updating them after each loop using Dairy's opmode hooks.
-            </p>
-=======
                 Dairy's service framework is tighly bound to the OpMode lifecycle and all services depend on <code>Loop()</code> occuring many 
                 times a second. By default, Roadrunner 1.0 runs code in a blocking loop, not letting the actual <code>Loop()</code> code of your OpMode run.
                 <br><br>
                 For users who are not using Mercurial as a commandbase, you will only need something to correct the blocking actions runner. 
                 This can be done with this sample Dairy service.
                 <br><br>
-                Below is a sample service called Silkroad. It is a dairy service where you set your running actions with <code>Silkroad.runAsync()</code>, 
-                similar to <code>Actions.runBlocking()</code>, but in the <code>Start()</code> method of <code>OpMode</code>. Then, Silkroad automatically 
+                Below is a sample service called SilkRoad. It is a dairy service where you set your running actions with <code>SillRoad.runAsync()</code>, 
+                similar to <code>Actions.runBlocking()</code>, but in the <code>Start()</code> method of <code>OpMode</code>. Then, SilkRoad automatically 
                 updates until all supplied actions are done, with no code besides setting run async actions required.
                 <br><br>
->>>>>>> 166a470 (test commit because uh)
                 <span id="silkroad"></span>
             <p>
                 If you use Mercurial, you can also use the following wrapper
@@ -59,7 +36,7 @@
             </p>
                 <span id="mercact"></span>
             <p>
-                You cam use this in <code>Silkroad.runAsync()</code> like you would any other action,
+                You cam use this in <code>SilkRoad.runAsync()</code> like you would any other action,
                 but pass in a Mercurial command!
                 It even works on Mercurial parallel or sequential commands by wrapping them:
                 <code class="language-java">new MercurialAction(new Parallel(Command...))</code>
