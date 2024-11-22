@@ -15,7 +15,7 @@ public class SilkRoad implements Feature {
 
     private SilkRoad() {}
 
-    public static final org.firstinspires.ftc.teamcode.util.SilkRoad INSTANCE = new org.firstinspires.ftc.teamcode.util.SilkRoad();
+    public static final SilkRoad INSTANCE = new SilkRoad();
 
 
     @Override
